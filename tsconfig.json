@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "paths": {
+      "@/*": ["./src"], 
+      "@component": ["./src/component"], 
+      "@type": ["./src/type"], 
+    },
+    "sourceMap": true,
+    "allowJs": true
+  }
+}

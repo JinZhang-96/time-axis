@@ -1,2 +1,4 @@
-# time-axis
-js 时间轴插件
+# ui-lib
+基于vue的组件库
+
+
