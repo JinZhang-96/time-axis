@@ -1,5 +1,5 @@
 {
-  "name": "ui-lib",
+  "name": "zb-ui-lib",
   "version": "1.0.0",
   "description": "组件库",
   "main": "./dist/ui-lib.umd.cjs",
@@ -9,7 +9,8 @@
     "preview": "vite ",
     "serve": "vite --config vite.config.dev.ts",
     "build": "vite build --config vite.config.prod.ts",
-    "build:watch": "vite build --config vite.config.prod.ts --watch"
+    "build:watch": "vite build --config vite.config.prod.ts --watch",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   },
   "keywords": [
     "js",
-    "ui-lib"
+    "zb-ui-lib"
   ],
   "author": "zb",
   "license": "ISC",
