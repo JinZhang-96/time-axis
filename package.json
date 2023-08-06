@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/JinZhang-96/ui-lib#readme",
   "devDependencies": {
+    "typescript": "^5.1.6",
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "@vitejs/plugin-vue2": "^2.2.0",
@@ -38,10 +39,8 @@
     "vitest": "^0.34.1"
   },
   "dependencies": {
-    "@vitejs/plugin-legacy": "^4.1.1",
     "element-ui": "^2.15.13",
     "moment": "^2.29.4",
-    "typescript": "^5.1.6",
     "vue": "^2.7.14"
   },
   "peerDependencies": {
