@@ -3,7 +3,7 @@
  * @Author: zb
  * @Date: 2023-08-04 14:35:13
  * @LastEditors: zb
- * @LastEditTime: 2023-08-05 23:57:06
+ * @LastEditTime: 2023-08-06 16:07:52
 -->
 
 <script lang="tsx">
@@ -61,15 +61,15 @@ export default defineComponent({
     },
     startTime: {
       type: [Date, Object],
-      default: () => moment().subtract(4, "d"),
+      default: () => moment(moment().subtract(4, "d").format("yyyy-MM-DD 00")),
     },
     endTime: {
       type: [Date, Object],
-      default: () => moment(),
+      default: () => moment(moment().add(1, 'd').format("yyyy-MM-DD 00")),
     },
     value: {
       type: [Date, Object],
-      default: () => moment().subtract(4, "d"),
+      default: () => moment(moment().subtract(4, "d").format("yyyy-MM-DD 00")),
     },
     space: {
       type: Number,
@@ -110,7 +110,7 @@ export default defineComponent({
       return moment(this.endTime).isSameOrBefore(this.model);
     },
     timeAxisData(): object[] {
-      const diff = moment(this.endTime).diff(moment(this.startTime), "hours");
+      const diff = moment(this.endTime).diff(this.startTime, "hours");
 
       return Array.from({ length: diff + 1 }, (i, index) => {
         const currentDate = moment(this.startTime).add(index, "h");
@@ -119,8 +119,8 @@ export default defineComponent({
           hours: currentDate.format("HH"),
           day: currentDate.format("E"),
           date: currentDate.date(),
-          active: currentDate.isSameOrBefore(this.model),
-          selected: currentDate.isSame(this.model),
+          active: currentDate.isSameOrBefore(this.model, "hour"),
+          selected: currentDate.isSame(this.model, "hour"),
         };
       });
     },
@@ -161,7 +161,7 @@ export default defineComponent({
       window.removeEventListener("resize", this.syncProgressWidth);
     },
     handleToLeft() {
-      if (this.model.getTime() === moment(this.startTime).toDate().getTime()) {
+      if (moment(this.model).isSameOrBefore(moment(this.startTime), "hour")) {
         this.model = moment(this.endTime).toDate();
       } else {
         this.model = moment(this.model).subtract(1, "h").toDate();
@@ -172,7 +172,7 @@ export default defineComponent({
       this.scrollProgressBar();
     },
     handleToRight() {
-      if (this.model.getTime() === moment(this.endTime).toDate().getTime()) {
+      if (moment(this.endTime).isSameOrBefore(moment(this.model), "hour")) {
         this.model = moment(this.startTime).toDate();
       } else {
         this.model = moment(this.model).add(1, "h").toDate();

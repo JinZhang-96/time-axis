@@ -1,6 +1,6 @@
 {
   "name": "zb-ui-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "组件库",
   "main": "./dist/ui-lib.umd.js",
   "module": "./dist/ui-lib.mjs",
