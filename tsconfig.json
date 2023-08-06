@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
+    "allowJs": true,
+    "target": "ES5",
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxFactory": "h",
@@ -7,8 +10,6 @@
       "@/*": ["./src"], 
       "@component": ["./src/component"], 
       "@type": ["./src/type"], 
-    },
-    "sourceMap": true,
-    "allowJs": true
+    }
   }
 }

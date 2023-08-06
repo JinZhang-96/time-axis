@@ -6,11 +6,11 @@
  * @LastEditTime: 2023-08-04 15:22:42
  */
 import { mergeConfig } from "vite";
-import { resolve } from "path";
 
 import defaultConfig from "./vite.config";
 
 export default mergeConfig(defaultConfig, {
+  mode:'development',
   server: {
     hmr: true,
     port: 4000,

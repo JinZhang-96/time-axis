@@ -77,7 +77,7 @@ export default defineComponent({
     },
     taskTimeout: {
       type: Number,
-      default: () => 30,
+      default: () => 1000,
     },
     tooltipFormat: {
       type: String,

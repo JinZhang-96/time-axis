@@ -3,19 +3,21 @@
  * @Author: zb
  * @Date: 2023-08-04 16:38:38
  * @LastEditors: zb
- * @LastEditTime: 2023-08-06 00:06:05
+ * @LastEditTime: 2023-08-06 11:52:18
  */
 
 import vue from "vue";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
-import TimeAxisPlugin from "@/";
+import UILibPlugin from "./dist/ui-lib.mjs";
+import "./dist/style.css";
+
 
 vue.use(ElementUI, {
   size: "medium", // set element-ui default size
 });
-vue.use(TimeAxisPlugin);
+vue.use(UILibPlugin);
 
 new vue({
   el: "#app",

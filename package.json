@@ -1,13 +1,13 @@
 {
   "name": "zb-ui-lib",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "组件库",
-  "main": "./dist/ui-lib.umd.cjs",
+  "main": "./dist/ui-lib.umd.js",
   "module": "./dist/ui-lib.mjs",
   "scripts": {
     "test": "vitest",
     "preview": "vite ",
-    "serve": "vite --config vite.config.dev.ts",
+    "dev": "vite --config vite.config.dev.ts",
     "build": "vite build --config vite.config.prod.ts",
     "build:watch": "vite build --config vite.config.prod.ts --watch",
     "publish": "npm publish"
@@ -27,14 +27,18 @@
   },
   "homepage": "https://github.com/JinZhang-96/ui-lib#readme",
   "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
     "@vitejs/plugin-vue2": "^2.2.0",
     "@vitejs/plugin-vue2-jsx": "^1.1.0",
     "@vue/runtime-dom": "^3.3.4",
     "less": "^4.1.3",
+    "rollup-plugin-babel": "^4.4.0",
     "vite": "^4.4.8",
     "vitest": "^0.34.1"
   },
   "dependencies": {
+    "@vitejs/plugin-legacy": "^4.1.1",
     "element-ui": "^2.15.13",
     "moment": "^2.29.4",
     "typescript": "^5.1.6",
