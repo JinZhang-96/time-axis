@@ -3,7 +3,7 @@
  * @Author: zb
  * @Date: 2023-08-04 14:35:13
  * @LastEditors: zb
- * @LastEditTime: 2023-08-06 16:07:52
+ * @LastEditTime: 2023-08-06 22:03:47
 -->
 
 <script lang="tsx">
@@ -65,7 +65,7 @@ export default defineComponent({
     },
     endTime: {
       type: [Date, Object],
-      default: () => moment(moment().add(1, 'd').format("yyyy-MM-DD 00")),
+      default: () => moment(moment().add(1, "d").format("yyyy-MM-DD 00")),
     },
     value: {
       type: [Date, Object],
@@ -251,6 +251,7 @@ export default defineComponent({
           </div>
           <slot>
             <el-date-picker
+              clearable={false}
               value={moment(this.model).subtract(24, "h")}
               onInput={this.parseInputDate}
               type="date"
